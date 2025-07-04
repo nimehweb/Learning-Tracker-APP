@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Tracker App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="nav" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">&#9776;</button>
+        <h2 class="nav-title">SIWES Tracker</h2>
+        <div class="nav-content">
+          <a href="#">
+            <i class="fas fa-book"></i>
+            <span class="link-text">Logbook</span>
+          </a>
+          <a href="#">
+            <i class="fas fa-file-alt"></i>
+            <span class="link-text">Reports</span>
+          </a>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+            <span class="link-text">Settings</span>
+          </a>
+        </div>
+      </nav>
+
+      <header class="head">Welcome to your SIWES Dashboard</header>
+
+      <main class="body">
+        <h1>Document your Experience</h1>
+        <p>Start adding your logbook entries here...</p>
+
+        <button id="open-modal-btn">Add New Log</button>
+        <!--------------------------------------------------------->
+        <!-- popup to add a new entry information -->
+        <!----------------------------------------------------------->
+        <div id="entry-modal" class="popup">
+          <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add Daily Entry</h2>
+            <form class="entry-form" id="entry-form">
+              <label for="entry-date">Select date:</label>
+              <input type="date" id="entry-date" required />
+
+              <label for="entry-description">What did you do?</label>
+              <textarea id="entry-description" rows="5" required></textarea>
+
+              <label for="entry-image">Attach an Image:</label>
+              <input type="file" id="entry-image" accept="image/*" multiple />
+              <div id="entry-preview-list" class="file-preview-list"></div>
+
+              <button type="submit">Add Entry</button>
+            </form>
+          </div>
+        </div>
+        <!-------------------------------------------------------------->
+        <!-- popup to edit a existing entry information -->
+        <!-------------------------------------------------------------->
+
+        <div id="edit-modal" class="popup">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Edit Entry</h2>
+            <form class="edit-form" id="edit-form">
+              <label for="edit-date">Select date:</label>
+              <input type="date" id="edit-date" required />
+
+              <label for="edit-description">What did you do?</label>
+              <textarea id="edit-description" rows="5" required></textarea>
+
+              <label for="edit-image">Attach an Image:</label>
+              <input type="file" id="edit-image" accept="image/*" multiple />
+              <div id="edit-preview-list" class="edit-preview-list"></div>
+
+              <button type="submit">Save</button>
+            </form>
+          </div>
+        </div>
+        <!-------------------------------------------------------------->
+
+        <div class="entries-container" id="entries-container"></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
